@@ -1,9 +1,9 @@
 ﻿// -----------------------------------------------------------------------
 //  <copyright file="HomeController.cs" company="OSharp开源团队">
-//      Copyright (c) 2015 OSharp. All rights reserved.
+//      Copyright (c) 2014-2015 OSharp. All rights reserved.
 //  </copyright>
-//  <last-editor>最后修改人</last-editor>
-//  <last-date>2015-01-09 13:50</last-date>
+//  <last-editor>郭明锋</last-editor>
+//  <last-date>2015-02-19 17:43</last-date>
 // -----------------------------------------------------------------------
 
 using System;
@@ -58,13 +58,13 @@ namespace OSharp.Demo.Web.Areas.Admin.Controllers
 
             Action<ICollection<TreeNode>> action = list =>
             {
-                foreach (var node in list)
+                foreach (TreeNode node in list)
                 {
                     node.Id = "node" + node.Text;
                 }
             };
 
-            foreach (var node in nodes)
+            foreach (TreeNode node in nodes)
             {
                 node.Id = "node" + node.Text;
                 if (node.Children != null && node.Children.Count > 0)
@@ -91,7 +91,6 @@ namespace OSharp.Demo.Web.Areas.Admin.Controllers
         #region 视图功能
 
         #endregion
-
 
         public ActionResult Index()
         {

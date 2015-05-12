@@ -1,5 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using OSharp.Utility.IO;
+
 
 namespace OSharp.Utility.Tests
 {
@@ -9,8 +16,12 @@ namespace OSharp.Utility.Tests
         [TestMethod]
         public void TestMethod1()
         {
-            Type type = typeof(String);
-            Assert.IsTrue(!type.IsValueType);
+            Type type = typeof(List<int>);
+            if (type.IsGenericType)
+            {
+                Type[] ts = type.GetGenericArguments();
+                Assert.IsTrue(ts.Length == 1);
+            }
         }
     }
 }
