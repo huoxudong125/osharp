@@ -20,7 +20,7 @@ namespace OSharp.UnitTest.Infrastructure
 
         protected UnitTestBase()
         {
-            Shims = ShimsContext.Create();
+            //Shims = ShimsContext.Create();
             List<TestEntity>entities = new List<TestEntity>();
             DateTime dt = DateTime.Now;
             Random rnd = new Random();
